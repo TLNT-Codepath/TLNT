@@ -15,12 +15,12 @@ TLNT is a mobile application that allows employers to match with local talent. W
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Job Searching Application
+- **Mobile:** This app will be developed first as a mobile application but could primarily function as a desktop web application, similar to Indeed. 
+- **Story:** Allows local talent to apply to project listings from employers. Also allows employers to create project listings and search for talent.
+- **Market:** Anyone looking for freelance work in art, acting, or music could use this application.
+- **Habit:** This could be an application that freelancers keep coming back to depending on whether employers in their area are frequently seeking talent.
+- **Scope:** We will start first with creating the functionality to allow users that are looking for work to view all the listings in their area. They will be able to apply to any of them. We will also allow users that sign-up as employers to create and edit project posts.
 
 ## Product Spec
 
