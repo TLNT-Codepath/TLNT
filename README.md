@@ -14,7 +14,6 @@ Original App Design Project - README Template
 TLNT is a mobile application that allows employers to match with local talent. Whether employers are looking for artists, actors, or musicians, they'll be able to find them by using TLNT. 
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Job Searching Application
 - **Mobile:** This app will be developed first as a mobile application but could primarily function as a desktop web application, similar to Indeed. 
 - **Story:** Allows local talent to apply to project listings from employers. Also allows employers to create project listings and search for talent.
