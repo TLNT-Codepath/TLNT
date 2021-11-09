@@ -1,1 +1,92 @@
+Original App Design Project - README Template
+===
+
 # TLNT
+
+## Table of Contents
+1. [Overview](#Overview)
+1. [Product Spec](#Product-Spec)
+1. [Wireframes](#Wireframes)
+2. [Schema](#Schema)
+
+## Overview
+### Description
+TLNT is a mobile application that allows employers to match with local talent. Whether employers are looking for artists, actors, or musicians, they'll be able to find them by using TLNT. 
+
+### App Evaluation
+[Evaluation of your app across the following attributes]
+- **Category:**
+- **Mobile:**
+- **Story:**
+- **Market:**
+- **Habit:**
+- **Scope:**
+
+## Product Spec
+
+### 1. User Stories (Required and Optional)
+
+**Required Must-have Stories**
+
+* User can sign up for an account and login
+* User can create a profile as either an employer or talent. If they are talent, they will be able to add relevant information such as a link to their portfolio.
+* User (both employer and talent) can edit their profile.
+* An employer can make a post for work that contains a description and the type of talent they need.
+* An employer can modify/delete their post.
+* If the user is categorized as talent, they will see a list of all employer posts.
+* If the user is categorized as talent, they can apply to the employer post.
+
+**Optional Nice-to-have Stories**
+
+* Users categorized as talent can also create posts. This could be an introduction post or a post that they're job-hunting.
+* Users categorized as talent can upload images, videos, or audio clips to their profile. This will serve as their portfolio that employers can view.
+
+### 2. Screen Archetypes
+
+* Login/Signup Screen
+   * User can sign up for an account and login
+* Profile Creation Screen
+   * User can create a profile as either an employer or talent. If they are talent, they will be able to add relevant information such as a link to their portfolio.
+* Employer Post Creation Screen
+   * An employer can make a post for work that contains a description and the type of talent they need.
+   * An employer can modify/delete their post.
+* Talent Feed Screen
+  * If the user is categorized as talent, they will see a list of all employer posts.
+  * If the user is categorized as talent, they can apply to the employer post.
+* Profile Screen
+  * User (both employer and talent) can edit their profile.
+
+### 3. Navigation
+
+**Tab Navigation** (Tab to Screen)
+
+* Talent Feed Screen
+* Project Post Creation Screen (only visible to employers)
+* Profile Screen
+
+**Flow Navigation** (Screen to Screen)
+
+* Talent Feed Screen
+   * Project Detail View
+   * User can apply to the posting
+* Project Post Creation Screen
+   * User (employer only) can create a new project post with a description, image, and a list of talent they're looking for.
+* Profile Screen
+   * User can view and edit their profile (both employer and talent)
+
+## Wireframes
+[Add picture of your hand sketched wireframes in this section]
+<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+
+### [BONUS] Digital Wireframes & Mockups
+
+### [BONUS] Interactive Prototype
+
+## Schema 
+[This section will be completed in Unit 9]
+### Models
+[Add table of models]
+### Networking
+- [Add list of network requests by screen ]
+- [Create basic snippets for each Parse network request]
+- [OPTIONAL: List endpoints if using existing API such as Yelp]
