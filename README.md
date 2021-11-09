@@ -75,11 +75,13 @@ TLNT is a mobile application that allows employers to match with local talent. W
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://github.com/TLNT-Codepath/TLNT/blob/main/lofi.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="https://github.com/TLNT-Codepath/TLNT/blob/main/hifi.PNG" width=600>
 
 ### [BONUS] Interactive Prototype
+<img src="https://github.com/TLNT-Codepath/TLNT/blob/main/prototype.gif" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
