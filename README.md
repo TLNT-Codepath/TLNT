@@ -83,7 +83,25 @@ TLNT is a mobile application that allows employers to match with local talent. W
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+User
+|Property|Type|Description|
+|--------|----|-----------|
+|isTalent|Bool|Whether or not user is talent|
+|bio|String|User bio|
+|profilePic|image|User image|
+
+Post
+|Property|Type|Description|
+|--------|----|-----------|
+|objectId|String|unique id for the user post (default field)|
+|author|Pointer to user|Post Author|
+|Title|String|Title of the post|
+|Description|String|Body of the post|
+|contactInfo|String|Contact info for the post|
+|createdAt|DateTime|date when post is created (default field)|
+|updatedAt|DateTime|date when post is last updated (default field)|
+
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
