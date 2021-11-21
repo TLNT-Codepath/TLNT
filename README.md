@@ -6,6 +6,7 @@
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
 
+
 ## Overview
 ### Description
 TLNT is a mobile application that allows employers to match with local talent. Whether employers are looking for artists, actors, or musicians, they'll be able to find them by using TLNT. 
