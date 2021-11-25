@@ -1,34 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".fragments.ProfileFragment">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+    <RelativeLayout
+        android:id="@+id/profile_image_layout"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
-        android:src="@drawable/profile_placeholder"
-        app:civ_border_color="@color/purple_700"
-        app:civ_border_width="2dp" />
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+        android:layout_marginTop="40dp"
+
+        android:layout_centerHorizontal="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/profile_placeholder"
+            app:civ_border_color="@color/purple_700"
+            app:civ_border_width="2dp" />
+
+        <ImageView
+            android:id="@+id/pick_image"
+            app:tint="@color/white"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/edit_bg"
+            android:padding="5dp"
+            android:backgroundTint="@color/purple_700"
+            android:src="@drawable/ic_baseline_photo_camera_24" />
+    </RelativeLayout>
+
+    <EditText
         android:id="@+id/full_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/edit_bg"
         android:hint="Full name"
         android:padding="15dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -39,7 +60,7 @@
         android:hint="Username"
         android:padding="15dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -49,18 +70,6 @@
         android:background="@drawable/edit_bg"
         android:hint="Password"
         android:inputType="textPassword"
-        android:padding="15dp"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/role"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/edit_bg"
-        android:hint="Role"
         android:padding="15dp" />
 
     <EditText
@@ -68,17 +77,27 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:visibility="gone"></EditText>
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit_bg" />
 
     <Button
-        android:id="@+id/edit_profile"
+        android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
+
         android:background="@drawable/edit_bg"
         android:backgroundTint="@color/black"
-        android:text="Edit Profile" />
+        android:text="Update" />
 
 </LinearLayout>
