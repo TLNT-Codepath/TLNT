@@ -25,13 +25,13 @@ TLNT is a mobile application that allows employers to match with local talent. W
 
 **Required Must-have Stories**
 
-* User can sign up for an account and login
-* User can create a profile as either an employer or talent. If they are talent, they will be able to add relevant information such as a link to their portfolio.
-* User (both employer and talent) can edit their profile.
-* An employer can make a post for work that contains a description and the type of talent they need.
-* An employer can modify/delete their post.
-* If the user is categorized as talent, they will see a list of all employer posts.
-* If the user is categorized as talent, they can apply to the employer post.
+- [x] User can sign up for an account and login
+- [x] User can create a profile as either an employer or talent. If they are talent, they will be able to add relevant information such as a link to their portfolio.
+- [x] User (both employer and talent) can edit their profile.
+- [ ] An employer can make a post for work that contains a description and the type of talent they need.
+- [ ] An employer can modify/delete their post.
+- [ ] If the user is categorized as talent, they will see a list of all employer posts.
+- [ ] If the user is categorized as talent, they can apply to the employer post.
 
 **Optional Nice-to-have Stories**
 
