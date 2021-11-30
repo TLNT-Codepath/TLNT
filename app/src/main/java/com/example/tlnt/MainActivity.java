@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.tlnt.fragments.ComposeFragment;
 import com.example.tlnt.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.LogInCallback;
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
+                    case R.id.action_compose:
+                        fragment = new ComposeFragment();
+                        break;
                     default:
                         fragment = new ProfileFragment();
                         break;
