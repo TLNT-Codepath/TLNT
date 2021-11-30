@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.tlnt.fragments.ComposeFragment;
+import com.example.tlnt.fragments.PostsFragment;
 import com.example.tlnt.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.LogInCallback;
@@ -43,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_compose:
                         fragment = new ComposeFragment();
                         break;
-                    default:
+                    case R.id.action_profile:
                         fragment = new ProfileFragment();
+                        break;
+                    default:
+                        fragment = new PostsFragment();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
