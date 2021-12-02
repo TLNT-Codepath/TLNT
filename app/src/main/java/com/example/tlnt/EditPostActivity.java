@@ -26,6 +26,7 @@ public class EditPostActivity extends AppCompatActivity {
 
     public static final String TAG = "EditPostActivity";
     private Button btnSave;
+    private Button btnDelete;
     private EditText etEditPostTitle;
     private EditText etEditPostDescription;
     private EditText etEditPostContact;
@@ -35,6 +36,7 @@ public class EditPostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_post);
         btnSave = findViewById(R.id.btnSave);
+        btnDelete = findViewById(R.id.btnDelete);
         etEditPostTitle = findViewById(R.id.etEditPostTitle);
         etEditPostDescription = findViewById(R.id.etEditPostDescription);
         etEditPostContact = findViewById(R.id.etEditPostContact);
@@ -50,6 +52,24 @@ public class EditPostActivity extends AppCompatActivity {
                            post.setDescription(etEditPostDescription.getText().toString());
                            post.setContact(etEditPostContact.getText().toString());
                            post.saveInBackground();
+                        } else {
+                            // something went wrong
+                            Log.e(TAG, e.toString());
+                        }
+                        finish();
+                    }
+                });
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+                query.getInBackground(getIntent().getStringExtra("postId"), new GetCallback<Post>() {
+                    public void done(Post post, ParseException e) {
+                        if (e == null) {
+                            post.deleteInBackground();
                         } else {
                             // something went wrong
                             Log.e(TAG, e.toString());
