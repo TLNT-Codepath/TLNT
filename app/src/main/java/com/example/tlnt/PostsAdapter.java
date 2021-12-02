@@ -1,9 +1,13 @@
 package com.example.tlnt;
 
 import android.content.Context;
+import android.content.Intent;
+import android.nfc.Tag;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
+import com.parse.ParseUser;
+
+import org.parceler.Parcels;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -50,20 +57,35 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
         private TextView tvTitle;
         private TextView tvDescription;
-
+        private Button btnEdit;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
 
         }
 
         public void bind(Post post) {
             tvDescription.setText(post.getDescription());
             tvTitle.setText(post.getTitle());
-
+            if (!post.getUser().getUsername().equals(ParseUser.getCurrentUser().getUsername())) {
+                btnEdit.setVisibility(View.GONE);
+            }
+            btnEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(context, EditPostActivity.class);
+                    i.putExtra("title", post.getTitle());
+                    i.putExtra("description", post.getDescription());
+                    i.putExtra("contact", post.getContact());
+                    i.putExtra("postId", post.getObjectId());
+                    context.startActivity(i);
+                }
+            });
         }
+
     }
 }

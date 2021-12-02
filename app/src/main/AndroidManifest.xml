@@ -29,6 +29,9 @@
         <activity
             android:name=".SignupActivity"
             android:exported="true" />
+        <activity
+            android:name=".EditPostActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

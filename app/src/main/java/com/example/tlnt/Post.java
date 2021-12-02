@@ -1,8 +1,11 @@
 package com.example.tlnt;
 
+import android.os.Parcelable;
+
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+import org.parceler.Parcel;
 
 @ParseClassName("Post")
 public class Post extends ParseObject {
@@ -12,8 +15,6 @@ public class Post extends ParseObject {
     public static final String KEY_TITLE = "title";
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED_KEY = "createdAt";
-
-
 
     public String getDescription(){
         return getString(KEY_DESCRIPTION);

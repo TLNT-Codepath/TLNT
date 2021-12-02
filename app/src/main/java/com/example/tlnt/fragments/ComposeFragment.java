@@ -7,23 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.tlnt.Post;
 import com.example.tlnt.R;
-import com.example.tlnt.databinding.FragmentComposeBinding;
 import com.parse.ParseException;
-import com.parse.ParseFile;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-
-import java.io.File;
 
 public class ComposeFragment extends Fragment {
 
@@ -48,9 +42,9 @@ public class ComposeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         etDescription = view.findViewById(R.id.etDescription);
-        etTitle = view.findViewById(R.id.etTitle);
+        etTitle = view.findViewById(R.id.etEditPostTitle);
         etContact = view.findViewById(R.id.etContact);
-        btnPost = view.findViewById(R.id.btnPost);
+        btnPost = view.findViewById(R.id.btnSave);
 
 
         //       queryPosts();
