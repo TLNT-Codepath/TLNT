@@ -21,6 +21,7 @@ import com.example.tlnt.databinding.FragmentPostsBinding;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +97,16 @@ public class PostsFragment extends Fragment {
                 for (Post post : posts){
                     Log.i(TAG, "Post: " + post.getDescription() + ", username: " + post.getUser().getUsername());
                 }
-                allPosts.addAll(posts);
+                if (ParseUser.getCurrentUser().getBoolean("isTalent")) {
+                    allPosts.addAll(posts);
+                } else {
+                    for (int i = 0; i < posts.size(); i++) {
+                        Post currentPost = posts.get(i);
+                        if (currentPost.getUser().getUsername().equals(ParseUser.getCurrentUser().getUsername())) {
+                            allPosts.add(currentPost);
+                        }
+                    }
+                }
                 adapter.notifyDataSetChanged();
             }
         });

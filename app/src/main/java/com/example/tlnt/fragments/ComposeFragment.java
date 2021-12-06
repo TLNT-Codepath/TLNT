@@ -42,7 +42,7 @@ public class ComposeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         etDescription = view.findViewById(R.id.etDescription);
-        etTitle = view.findViewById(R.id.etEditPostTitle);
+        etTitle = view.findViewById(R.id.etTitle);
         etContact = view.findViewById(R.id.etContact);
         btnPost = view.findViewById(R.id.btnSave);
 
