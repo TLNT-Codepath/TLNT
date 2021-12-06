@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         final FragmentManager fragmentManager = getSupportFragmentManager();
         bottomNavigationView = findViewById(R.id.bottomNavigation);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -55,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
+        if (ParseUser.getCurrentUser().getBoolean("isTalent")) {
+            bottomNavigationView.getMenu().removeItem(R.id.action_compose);
+        }
         bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
 }
