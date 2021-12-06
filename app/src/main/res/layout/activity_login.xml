@@ -7,12 +7,22 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/tvLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="TLNT"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/etLoginUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:hint="Username"

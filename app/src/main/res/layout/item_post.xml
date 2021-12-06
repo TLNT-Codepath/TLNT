@@ -38,4 +38,13 @@
         android:layout_toEndOf="@+id/tvTitle"
         android:text="Edit" />
 
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDescription"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:text="Apply" />
+
 </RelativeLayout>

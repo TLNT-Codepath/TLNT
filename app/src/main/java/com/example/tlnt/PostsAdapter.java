@@ -2,6 +2,7 @@ package com.example.tlnt;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.nfc.Tag;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,6 +59,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private TextView tvTitle;
         private TextView tvDescription;
         private Button btnEdit;
+        private Button btnApply;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -65,14 +67,18 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             btnEdit = itemView.findViewById(R.id.btnEdit);
-
+            btnApply = itemView.findViewById(R.id.btnApply);
         }
 
         public void bind(Post post) {
             tvDescription.setText(post.getDescription());
             tvTitle.setText(post.getTitle());
+            // if this post does not belong to the user
             if (!post.getUser().getUsername().equals(ParseUser.getCurrentUser().getUsername())) {
                 btnEdit.setVisibility(View.GONE);
+            }
+            if (!ParseUser.getCurrentUser().getBoolean("isTalent")) {
+                btnApply.setVisibility(View.GONE);
             }
             btnEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -83,6 +89,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                     i.putExtra("contact", post.getContact());
                     i.putExtra("postId", post.getObjectId());
                     context.startActivity(i);
+                }
+            });
+            btnApply.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    Uri data = Uri.parse("mailto:" + post.getContact() + "?subject=" + Uri.encode("Applying for: " + post.getTitle()));
+                    intent.setData(data);
+                    context.startActivity(intent);
                 }
             });
         }
