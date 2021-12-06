@@ -57,12 +57,12 @@ public class ProfileFragment extends Fragment {
         edit_profile = view.findViewById(R.id.edit_profile);
         role = view.findViewById(R.id.role);
         String full_name_str = ParseUser.getCurrentUser().getString("full_name");
-        String user_name_str = ParseUser.getCurrentUser().getString("user_name");
-        String role_str = ParseUser.getCurrentUser().getString("role");
+        String user_name_str = ParseUser.getCurrentUser().getUsername();
+        Boolean isTalent = ParseUser.getCurrentUser().getBoolean("isTalent");
         String photo = ParseUser.getCurrentUser().getString("photo");
-        full_name.setText(full_name_str);
-        user_name.setText(user_name_str);
-        role.setText(role_str);
+        full_name.setText("Full Name: " + full_name_str);
+        user_name.setText("Username: " + user_name_str);
+        role.setText("Role: " + (isTalent ? "Talent" : "Employer"));
         Bitmap bitmap = StringToBitMap(photo);
         profile_image.setImageBitmap(bitmap);
 
@@ -96,12 +96,12 @@ public class ProfileFragment extends Fragment {
     public void onResume() {
         super.onResume();
         String full_name_str = ParseUser.getCurrentUser().getString("full_name");
-        String user_name_str = ParseUser.getCurrentUser().getString("user_name");
-        String role_str = ParseUser.getCurrentUser().getString("role");
+        String user_name_str = ParseUser.getCurrentUser().getUsername();
+        Boolean isTalent = ParseUser.getCurrentUser().getBoolean("isTalent");
         String photo = ParseUser.getCurrentUser().getString("photo");
-        full_name.setText(full_name_str);
-        user_name.setText(user_name_str);
-        role.setText(role_str);
+        full_name.setText("Full Name: " + full_name_str);
+        user_name.setText("Username: " + user_name_str);
+        role.setText("Role: " + (isTalent ? "Talent" : "Employer"));
         Bitmap bitmap = StringToBitMap(photo);
         profile_image.setImageBitmap(bitmap);
     }
