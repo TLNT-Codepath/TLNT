@@ -27,7 +27,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.tlnt.EditProfile;
+import com.example.tlnt.LoginActivity;
 import com.example.tlnt.R;
+import com.parse.LogOutCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
@@ -39,6 +41,7 @@ public class ProfileFragment extends Fragment {
     CircleImageView profile_image;
     ImageView pick_image;
     Button edit_profile;
+    Button btnLogout;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -56,6 +59,7 @@ public class ProfileFragment extends Fragment {
         password = view.findViewById(R.id.password);
         edit_profile = view.findViewById(R.id.edit_profile);
         role = view.findViewById(R.id.role);
+        btnLogout = view.findViewById(R.id.btnLogout);
         String full_name_str = ParseUser.getCurrentUser().getString("full_name");
         String user_name_str = ParseUser.getCurrentUser().getUsername();
         Boolean isTalent = ParseUser.getCurrentUser().getBoolean("isTalent");
@@ -70,6 +74,18 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getContext(), EditProfile.class));
+            }
+        });
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParseUser.logOutInBackground(new LogOutCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        getActivity().finish();
+                        startActivity(new Intent(getContext(), LoginActivity.class));
+                    }
+                });
             }
         });
         return view;
