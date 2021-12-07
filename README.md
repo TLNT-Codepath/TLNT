@@ -41,17 +41,14 @@ TLNT is a mobile application that allows employers to match with local talent. W
 
 ### 2. Video Walkthroughs
 
-Sign-up Flow:
-<img src='TLNT-SignupFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-Create/Update/Delete Listing Flow:
-<img src='TLNT-CreateListingFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-Edit Profile Flow:
-<img src='TLNT-EditProfileFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-Apply Flow:
-<img src='TLNT-ApplyFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+**Sign-up Flow:**
+ * <img src='TLNT-SignupFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+**Create/Update/Delete Listing Flow:**
+ * <img src='TLNT-CreateListingFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+**Edit Profile Flow:**
+ * <img src='TLNT-EditProfileFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+**Apply Flow:**
+ * <img src='TLNT-ApplyFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### 3. Screen Archetypes
 
