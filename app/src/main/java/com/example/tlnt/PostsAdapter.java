@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import com.parse.ParseFile;
 import com.parse.ParseUser;
 
 import org.parceler.Parcels;
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -60,7 +62,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private TextView tvDescription;
         private Button btnEdit;
         private Button btnApply;
-
+        private TextView tvPostedBy;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,11 +70,13 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvDescription = itemView.findViewById(R.id.tvDescription);
             btnEdit = itemView.findViewById(R.id.btnEdit);
             btnApply = itemView.findViewById(R.id.btnApply);
+            tvPostedBy = itemView.findViewById(R.id.tvPostedBy);
         }
 
         public void bind(Post post) {
             tvDescription.setText(post.getDescription());
             tvTitle.setText(post.getTitle());
+            tvPostedBy.setText("Posted by " + post.getUser().get("full_name") + " on " + post.getCreatedAt());
             // if this post does not belong to the user
             if (!post.getUser().getUsername().equals(ParseUser.getCurrentUser().getUsername())) {
                 btnEdit.setVisibility(View.GONE);

@@ -8,11 +8,22 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/etSignupUsername"
+        android:id="@+id/etSignupFullname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="200dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etSignupUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
         android:ems="10"
         android:hint="Username"
@@ -29,6 +40,15 @@
         android:hint="Password"
         android:inputType="textPersonName"
         android:password="true" />
+
+    <Switch
+        android:id="@+id/switchSignupIsEmployer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:text="Employer" />
 
     <Button
         android:id="@+id/btnSignupSignup"

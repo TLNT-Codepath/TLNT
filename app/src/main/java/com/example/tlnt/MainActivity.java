@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         });
         if (ParseUser.getCurrentUser().getBoolean("isTalent")) {
             bottomNavigationView.getMenu().removeItem(R.id.action_compose);
+            bottomNavigationView.getMenu().findItem(R.id.action_home).setTitle("Home");
         }
         bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
