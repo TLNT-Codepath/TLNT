@@ -39,7 +39,18 @@ TLNT is a mobile application that allows employers to match with local talent. W
 - [ ] Users categorized as talent can also create posts. This could be an introduction post or a post that they're job-hunting.
 - [ ] Users categorized as talent can upload images, videos, or audio clips to their profile. This will serve as their portfolio that employers can view.
 
-### 2. Screen Archetypes
+### 2. Video Walkthroughs
+
+**Sign-up Flow:**
+ * <img src='TLNT-SignupFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+**Create/Update/Delete Listing Flow:**
+ * <img src='TLNT-CreateListingFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+**Edit Profile Flow:**
+ * <img src='TLNT-EditProfileFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+**Apply Flow:**
+ * <img src='TLNT-ApplyFlow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+### 3. Screen Archetypes
 
 * Login/Signup Screen
    * User can sign up for an account and login
@@ -54,7 +65,7 @@ TLNT is a mobile application that allows employers to match with local talent. W
 * Profile Screen
   * User (both employer and talent) can edit their profile.
 
-### 3. Navigation
+### 4. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
