@@ -79,10 +79,6 @@ public class EditProfile extends AppCompatActivity implements
         password = findViewById(R.id.password);
         tvBio = findViewById(R.id.tvBio);
         btnUpdate = findViewById(R.id.btnUpdate);
-
-//        String bio = ParseUser.getCurrentUser().getString("bio");
-
-//        tvBio.setText(bio);
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         spin.setOnItemSelectedListener(this);
 
@@ -109,26 +105,26 @@ public class EditProfile extends AppCompatActivity implements
 
                     Toast.makeText(EditProfile.this, "Please select image", Toast.LENGTH_LONG).show();
                 } else {
-                    Dialog lodingbar = new Dialog(EditProfile.this);
-                    lodingbar.setContentView(R.layout.loading);
-                    Objects.requireNonNull(lodingbar.getWindow()).setBackgroundDrawable(new ColorDrawable(UCharacter.JoiningType.TRANSPARENT));
-                    lodingbar.setCancelable(false);
-                    lodingbar.show();
+                    Dialog loadingbar = new Dialog(EditProfile.this);
+                    loadingbar.setContentView(R.layout.loading);
+                    Objects.requireNonNull(loadingbar.getWindow()).setBackgroundDrawable(new ColorDrawable(UCharacter.JoiningType.TRANSPARENT));
+                    loadingbar.setCancelable(false);
+                    loadingbar.show();
                     ParseUser.getCurrentUser().put("full_name", full_name.getText().toString());
-                    ParseUser.getCurrentUser().put("user_name", user_name.getText().toString());
+                    ParseUser.getCurrentUser().setUsername(user_name.getText().toString());
                     ParseUser.getCurrentUser().put("password", password.getText().toString());
-                    ParseUser.getCurrentUser().put("role", role_str);
+                    ParseUser.getCurrentUser().put("isTalent", role_str.equals("Talent"));
                     ParseUser.getCurrentUser().put("photo", s);
                     ParseUser.getCurrentUser().put("bio", tvBio.getText().toString());
                     ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {
                             if (e != null) {
-                                lodingbar.dismiss();
+                                loadingbar.dismiss();
                                 Log.e(TAG, "Error while saving", e);
                                 Toast.makeText(EditProfile.this, "Error while saving!", Toast.LENGTH_SHORT).show();
                             } else {
-                                lodingbar.dismiss();
+                                loadingbar.dismiss();
                                 Toast.makeText(EditProfile.this, "Successfully Updated!", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
@@ -219,7 +215,6 @@ public class EditProfile extends AppCompatActivity implements
                 e.printStackTrace();
             }
             final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-//            s = compressImage(ImageUri + "", this);
             s = encodeBitmapImage(selectedImage);
 
         }
